@@ -1,13 +1,13 @@
 <?php
 
-// set default Category and Platform on Game Posts
+// set default Category and Marketpalce on Asset Posts
 // https://silentcomics.com/wordpress/automatic-default-taxonomy-for-a-custom-post-type/
 
 function guru_set_default_marketplace ( $post_id, $post ) {
-    if ( 'publish' === $post->post_status && $post->post_type === 'games' ) {
+    if ( 'publish' === $post->post_status && $post->post_type === 'assets' ) {
         $defaults = array(
-            // 'category' => array( 'not-played' ),
-            'platform' => array ( 'epic' ),
+            'category' => array( 'not-tried' ),
+            'marketplace' => array ( 'epic' ),
             );
         $taxonomies = get_object_taxonomies( $post->post_type );
         foreach ( (array) $taxonomies as $taxonomy ) {
