@@ -67,7 +67,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 'nopaging' => true )
             );
             $results = $query->found_posts;
-            echo "<p>Here's a list of all <strong>$results 3D Assets</strong> in my collection:</p><ul>";
+            echo "<p>Here's a list of all <strong>$results Assets</strong> in my collection:</p><ul>";
 
             // list all games
             if ($query->have_posts() ) {
