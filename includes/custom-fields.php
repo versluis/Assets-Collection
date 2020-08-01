@@ -12,7 +12,7 @@ function guru_add_meta_box()
     'guru_fields_meta_box', // $id
     'Marketplace Links', // $title
     'guru_display_meta_box', // $callback
-    'games', // $screen
+    'assets', // $screen
     'normal', // $context
     'high' // $priority
   );

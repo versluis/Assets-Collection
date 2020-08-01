@@ -4,15 +4,16 @@
 /* META DATA
 /*
 /************************************/
-// make meta data show up on game posts
+
+// make meta data show up on Asset posts
 add_filter( 'generate_entry_meta_post_types', function( $types ) {
-    $types[] = 'games';
+    $types[] = 'assets';
     return $types;
   } );
   
-  add_filter( 'generate_footer_meta_post_types', function( $types ) {
+add_filter( 'generate_footer_meta_post_types', function( $types ) {
     // $types[] = 'my-post-type';
-    $types[] = 'games';
+    $types[] = 'assets';
     return $types;
   } );
      
@@ -46,11 +47,11 @@ add_filter( 'generate_entry_meta_post_types', function( $types ) {
     );
   } );
   
-  // add Platform taxonomy to footer meta (when available)
+  // add Marketplace taxonomy to footer meta (when available)
   add_filter( 'generate_category_list_output', function( $output ) {
-    $terms = get_the_term_list( get_the_ID(), 'platform', '', ', ' );
+    $terms = get_the_term_list( get_the_ID(), 'marketplace', '', ', ' );
     if ($terms) {
-      return '<span class="platform"> &#127918; Platform: ' . $terms . '</span>' . $output;
+      return '<span class="platform"> &#127918; Marketplace: ' . $terms . '</span>' . $output;
     } else 
     return $output;
     
