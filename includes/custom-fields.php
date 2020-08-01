@@ -10,7 +10,7 @@ function guru_add_meta_box()
 {
   add_meta_box(
     'guru_fields_meta_box', // $id
-    'Game Store Links', // $title
+    'Marketplace Links', // $title
     'guru_display_meta_box', // $callback
     'games', // $screen
     'normal', // $context
@@ -28,10 +28,10 @@ function guru_display_meta_box()
   <input type="hidden" name="guru_meta_box_nonce" value="<?php echo wp_create_nonce(basename(__FILE__)); ?>">
 
   <!-- All fields will go here -->
-  <p>Add a link to the Steam store page to include a snazzy widget ;-)</p>
+  <p>Add a link to the product page, it'll display below the main text above ;-)</p>
 
   <p>
-    <label for="guru_fields[steamURL]">Steam URL: </label>
+    <label for="guru_fields[steamURL]">Marketplace URL: </label>
     <input type="text" name="guru_fields[steamURL]" id="guru_fields[steamURL]" 
     class="regular-text" value="<?php echo $meta['steamURL']; ?>">
   </p>

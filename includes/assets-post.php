@@ -11,7 +11,7 @@ function guru_create_asset_posttype()
 
   // create out custom post type
   register_post_type(
-    'games',
+    'assets',
     // with these options
     array(
       'labels' => array(
@@ -22,7 +22,7 @@ function guru_create_asset_posttype()
       'has_archive' => true,
       'rewrite' => array('slug' => 'asset'),
       'show_in_rest' => true,
-      'menu_icon'   => 'dashicons-album',
+      'menu_icon'   => 'dashicons-nametag',
 
     )
   );
