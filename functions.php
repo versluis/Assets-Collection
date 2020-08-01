@@ -32,7 +32,7 @@ add_action('wp_enqueue_scripts', 'your_theme_enqueue_styles');
 include plugin_dir_path(__FILE__).'includes/assets-post.php';
 include plugin_dir_path(__FILE__).'includes/marketplace-tax.php';
 include plugin_dir_path(__FILE__).'includes/default-marketplace.php';
-include plugin_dir_path(__FILE__).'includes/debug.php';
+// include plugin_dir_path(__FILE__).'includes/debug.php';
 include plugin_dir_path(__FILE__).'includes/meta.php';
 include plugin_dir_path(__FILE__).'includes/footer-tweak.php';
 include plugin_dir_path(__FILE__).'includes/custom-fields.php';
