@@ -1,0 +1,91 @@
+/* 
+ Theme Name:   Assets Collection
+ Theme URI:    https://github.com/versluis/Assets-Collection
+ Description:  starting point for my ever growing games collection
+ Author:       Jay Versluis
+ Author URI:   https://versluis.com
+ Template:     generatepress
+ Version:      1.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+
+ CHANGELOG
+ ==========
+
+ v1.0 - August 2020
+ based on my Games Collection
+ replaced Platform with Marketplace
+ replaced Games with Assets
+
+
+ /* == Add your own styles below this line ==
+--------------------------------------------*/
+
+#nav-below {
+    display: none;
+}
+
+.platform {
+    margin-left: 0px;
+}
+
+.search-submit {
+    border-radius: 5px;
+}
+
+.button {
+    border-radius: 5px;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+.button.gradient,
+.button.gradient:visited {
+    border-radius: 5px; /*Adjust accordingly*/
+    background: #0e103d;
+    background: 1webkit-gradient(linear, left top, left bottom, color-stop(49%, #0e103d), to(#d3bcc0));
+    background: linear-gradient(180deg, #0e103d 49%, #d3bcc0 100%);
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+    background-repeat: repeat-y;
+    background-size: 100% 90px;
+    background-position: 0 -30px;
+}
+.button.gradient:hover,
+.button.gradient:active {
+    background-position: 0;
+}
+
+.button.gradient2,
+.button.gradient2:visited {
+    border-radius: 5px; /*Adjust accordingly*/
+    background: rgb(255, 183, 65);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(49%, rgba(255, 183, 65, 1)), to(rgba(214, 38, 38, 1)));
+    background: linear-gradient(180deg, rgba(255, 183, 65, 1) 49%, rgba(214, 38, 38, 1) 100%);
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+    background-repeat: repeat-y;
+    background-size: 100% 90px;
+    background-position: 0 -30px;
+}
+.button.gradient2:hover,
+.button.gradient2:active {
+    background-position: 0;
+}
+
+.button.gradient3,
+.button.gradient3:visited {
+    border-radius: 5px; /*Adjust accordingly*/
+    background: #441a33;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(49%, #441a33), to(#5BB3A4));
+    background: linear-gradient(180deg, #68a6a8 49%, #441a33 100%);
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+    background-repeat: repeat-y;
+    background-size: 100% 90px;
+    background-position: 0 -30px;
+}
+.button.gradient3:hover,
+.button.gradient3:active {
+    background-position: 0;
+}
