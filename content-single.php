@@ -65,15 +65,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 			// if we have a Steam URL, let's display that widget
 			$meta = get_post_meta(get_the_id(), 'guru_fields', true);
 			if ($meta['steamURL']) {
+				
 				// echo "We have Meta Data!";
 				// echo "The Marketpalce URL is $meta[steamURL] :-)<br>";
 
-				// guru_show_steam_widget( $meta['steamURL'] );
-				// guru_pull_image($meta['steamURL']);
-				// echo $image;
+				// content goes here
+				
+				// embed source image
+				$imageURL = guru_pull_image($meta['steamURL'], get_the_ID());
+				echo ('<a href="' . $meta['steamURL'] . '" target="_blank">
+				<img src="' . $imageURL . '"></a>');
 
 				// print a link to the Marketplace Listing:
-				echo ('<ul><li><a href="' . $meta['steamURL'] . '" target="_blank">Product Link</a></li></ul>');
+				echo ('<ul><li>');
+				echo ('<a href="' . $meta['steamURL'] . '" target="_blank">Product Link</a></li>');
+
+				// let users regenerate the image
+				// echo ('<li><a href="#">Regenerate Preview</a></li>');
+
+				// echo ('<li>Post ID: ' . get_the_ID() . '</li>');
+				// echo ('<li>Image URL: ' . $imageURL . '</li>');
+				echo ('</ul>');
 			} 
 			
 			wp_link_pages( array(
