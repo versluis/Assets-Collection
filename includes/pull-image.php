@@ -1,30 +1,30 @@
 <?php
 /************************************/
 /*
-/* PULL IMAGE
-/* found here: https://www.ostraining.com/blog/coding/extract-image-php/
-/* and here: https://stackoverflow.com/questions/7479835/getting-the-first-image-in-string-with-php
+/* EMBED WEB PREVIEW
+/* 
+/* 
 /*
 /************************************/
 
-// require 'phpQuery-onefile.php';
+// embed a screenshot of our asset 
+function guru_pull_image ($sourceURL, $imageID) {
 
-function guru_pull_image ($sourceURL) {
+    $image = 'imagecache/image' . $imageID . '.jpg';
+    $imageURL = "https://assets.wpguru.co.uk/" . $image;
 
-    $html = file_get_contents($sourceURL);
+    // if we have a cached image, return that
+    if (file_exists($image)) {
+        return $imageURL;
 
-    echo ("The URL reads: <br>");
-    echo $html;
+    } else {
+        // otherwise let's generate it first
+        $command = 'wkhtmltoimage --enable-javascript --javascript-delay 3000 --images --height 768 ' . $sourceURL . ' ' . $image;
+        exec($command);
+    
+        return $imageURL;
 
-    preg_match_all('/<img.*?src=[\'"](.*?)[\'"].*?>/i', $html, $matches);
-    var_dump($matches);
-
-
-    $elements = $matches[1];
-
-    foreach($elements as $element) {
-       echo $element . "\n";
-}
-
+    }
+    
 
 }
