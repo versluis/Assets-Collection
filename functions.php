@@ -36,7 +36,7 @@ include plugin_dir_path(__FILE__).'includes/default-marketplace.php';
 include plugin_dir_path(__FILE__).'includes/meta.php';
 include plugin_dir_path(__FILE__).'includes/footer-tweak.php';
 include plugin_dir_path(__FILE__).'includes/custom-fields.php';
-// include plugin_dir_path(__FILE__).'includes/pull-image.php';
+include plugin_dir_path(__FILE__).'includes/pull-image.php';
 
 
 // add Asset posts to regular WordPress queries
