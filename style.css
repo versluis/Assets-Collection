@@ -13,10 +13,10 @@
  ==========
 
  v1.0 - August 2020
- based on my Games Collection
- replaced Platform with Marketplace
- replaced Games with Assets
-
+ * based on my Games Collection
+ * replaced Platform with Marketplace
+ * replaced Games with Assets
+ * added routine to grab and cahce web preview from asset URL
 
  /* == Add your own styles below this line ==
 --------------------------------------------*/
