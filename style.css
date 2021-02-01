@@ -5,12 +5,16 @@
  Author:       Jay Versluis
  Author URI:   https://versluis.com
  Template:     generatepress
- Version:      1.0
+ Version:      1.1
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 
  CHANGELOG
  ==========
+
+ v1.1 - February 2021
+ * consolidated page templates into shortcode queries
+ * added random header images
 
  v1.0 - August 2020
  * based on my Games Collection
