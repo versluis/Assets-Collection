@@ -25,6 +25,32 @@ function querytest() {
     echo '<br>';
 }
 
+// returns formatted TOC list
+// requires $query
+function guru_toc_output ( $query ) {
+
+    // list articles
+    if ($query->have_posts()) {
+        $output = $output . '<ul>';
+
+        $count = 0;
+        while ($query->have_posts()) {
+
+            $count++;
+            $query->the_post();
+            $output = $output .  '<li style="list-style: disclosure-closed"><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
+
+            if ($count >= 10) {
+                $output = $output . "<hr class='slimline'>";
+                $count = 0;
+            }
+        }
+        $output = $output .  "</ul>";
+
+        return $output;
+    } // end list articles
+}
+
 // list all assets
 function assets_ListAll () {
 
@@ -35,15 +61,8 @@ function assets_ListAll () {
     $results = $query->found_posts;
     echo "<p>Here's a list of all <strong>$results Assets</strong> in my collection:</p><ul>";
 
-    // iterate
-    if ($query->have_posts() ) {
-        echo "";
-        while ($query->have_posts() ) {
-            $query->the_post();
-            echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
-        }
-        echo "</ul>";
-    } // end list all
+    // print query with separators
+    echo guru_toc_output( $query );
 }
 
 // DAZ with Interactive License
@@ -55,15 +74,8 @@ function assets_dazi() {
     $results = $query->found_posts;
     echo "<p>There are <strong>$results DAZ3D Assets</strong> with interactive licenses in my collection:</p><ul>";
 
-    // list all games
-    if ($query->have_posts() ) {
-        echo "";
-        while ($query->have_posts() ) {
-            $query->the_post();
-            echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
-        }
-        echo "</ul>";
-    } // end DAZ Interactive
+    // print query with separators
+    echo guru_toc_output( $query );
 }
 
 // DAZ regular assets
@@ -75,15 +87,8 @@ function assets_daz() {
     $results = $query->found_posts;
     echo "<p>There are <strong>$results DAZ3D Assets</strong> with interactive licenses in my collection:</p><ul>";
 
-    // list all games
-    if ($query->have_posts() ) {
-        echo "";
-        while ($query->have_posts() ) {
-            $query->the_post();
-            echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
-        }
-        echo "</ul>";
-    } // end DAZ Interactive
+    // print query with separators
+    echo guru_toc_output( $query );
 }
 
 // EPIC Assets
@@ -96,15 +101,8 @@ function assets_ListEPIC() {
     $results = $query->found_posts;
     echo "<p>There are <strong>$results Unreal Marketplace Assets</strong> in my collection:</p><ul>";
 
-    // list all games
-    if ($query->have_posts() ) {
-        echo "";
-        while ($query->have_posts() ) {
-            $query->the_post();
-            echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
-        }
-        echo "</ul>";
-    } // end list EPIC
+    // print query with separators
+    echo guru_toc_output( $query );
 }
 
 // Humble Assets
@@ -116,15 +114,8 @@ function assets_ListHumble() {
     $results = $query->found_posts;
     echo "<p>There are <strong>$results Humble Bundle Assets</strong> in my collection:</p><ul>";
 
-    // list all games
-    if ($query->have_posts() ) {
-        echo "";
-        while ($query->have_posts() ) {
-            $query->the_post();
-            echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
-        }
-        echo "</ul>";
-    } // end list Humble
+    // print query with separators
+    echo guru_toc_output( $query );
 }
 
 // Synty Assets
@@ -136,13 +127,6 @@ function assets_ListSynty() {
     $results = $query->found_posts;
     echo "<p>There are <strong>$results Synty Store Assets</strong> in my collection:</p><ul>";
 
-    // list all games
-    if ($query->have_posts() ) {
-        echo "";
-        while ($query->have_posts() ) {
-            $query->the_post();
-            echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
-        }
-        echo "</ul>";
-    } // end list Synty
+    // print query with separators
+    echo guru_toc_output( $query );
 }
