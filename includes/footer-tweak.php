@@ -27,10 +27,10 @@ if ( ! function_exists( 'generate_add_footer_info' ) ) {
 	}
 }
 
-// add Genre to Tag Archives, Status to Categories
+// add Asset Type to Tag Archives, Status to Categories
 add_filter( 'get_the_archive_title', function( $title ) {
   if ( is_tag() ) {
-      $title = 'Genre: ' . $title;
+      $title = 'Asset Type: ' . $title;
   }
 
   if (is_category()) {

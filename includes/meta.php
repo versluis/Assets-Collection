@@ -32,12 +32,12 @@ add_filter( 'generate_footer_meta_post_types', function( $types ) {
     );
   } );
   
-  // add Genre in front of Tags
+  // add Asset Type in front of Tags
   // can't be done - but this is where it should be done :-)
   add_filter( 'generate_tag_list_output', function() {
     $categories = apply_filters( 'generate_show_tags', true );
   
-    $tag_list = get_the_tag_list( 'Genre: ', ', ');
+    $tag_list = get_the_tag_list( 'Asset Type: ', ', ');
   
     return sprintf( '<span class="tags-links">%3$s<span class="screen-reader-text">%1$s </span>%2$s</span> ', // WPCS: XSS ok, sanitization ok.
         esc_html_x( 'Categories', 'Used before category names.', 'generatepress' ),
