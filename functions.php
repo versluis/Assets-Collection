@@ -37,7 +37,7 @@ include plugin_dir_path(__FILE__).'includes/meta.php';
 include plugin_dir_path(__FILE__).'includes/footer-tweak.php';
 include plugin_dir_path(__FILE__).'includes/custom-fields.php';
 include plugin_dir_path(__FILE__).'includes/pull-image.php';
-
+include plugin_dir_path(__FILE__).'includes/content-queries.php';
 
 // add Asset posts to regular WordPress queries
 function guru_add_assets_to_query( $query ) {
