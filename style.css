@@ -89,3 +89,9 @@
 .button.gradient3:active {
     background-position: 0;
 }
+
+/* less padding for this HR separator in lists */
+.slimline {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
