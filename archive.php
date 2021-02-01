@@ -23,21 +23,15 @@ get_header(); ?>
 
 			if ( have_posts() ) :
 
-                // **
-                // generate header				 
-                ?>
-                <header class="page-header">
-                <h1 class="page-title">
-                    <?php
-                    printf( // WPCS: XSS ok.
-                        /* translators: 1: Search query name */
-                        __( 'Search Results for: %s', 'generatepress' ),
-                        '<span>' . get_search_query() . '</span>'
-                    );
-                    ?>
-                </h1>
-            </header><!-- .page-header -->
-
+				/**
+				 * generate_archive_title hook.
+				 *
+				 * @since 0.1
+				 *
+				 * @hooked generate_archive_title - 10
+				 */
+				do_action( 'generate_archive_title' );
+				?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php generate_do_microdata( 'article' ); ?>>
 					<div class="inside-article">
 						<?php
@@ -76,7 +70,7 @@ get_header(); ?>
 
 			else :
 
-				get_template_part( 'no-results', 'archive' );
+				// get_template_part( 'no-results', 'archive' );
 
 			endif;
 
