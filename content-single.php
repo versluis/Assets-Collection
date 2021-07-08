@@ -70,18 +70,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 				// echo "The Marketpalce URL is $meta[steamURL] :-)<br>";
 
 				// add DAZ Affililate code to URL
-				$meta['steamURL'] = $meta['steamURL'] . '?cjref=1&utm_source=cj&utm_medium=affiliate&cjevent=bd1e3350dfe911eb80a6d9200a82b821';
+				$dazlink = $meta['steamURL'] . '?cjref=1&utm_source=cj&utm_medium=affiliate&cjevent=bd1e3350dfe911eb80a6d9200a82b821';
 
 				// content goes here
 				
 				// embed source image
 				$imageURL = guru_pull_image($meta['steamURL'], get_the_ID());
-				echo ('<a href="' . $meta['steamURL'] . '" target="_blank">
+				echo ('<a href="' . $dazlink . '" target="_blank">
 				<img src="' . $imageURL . '"></a>');
 
 				// print a link to the Marketplace Listing:
 				echo ('<ul><li>');
-				echo ('<a href="' . $meta['steamURL'] . '" target="_blank">Product Link</a></li>');
+				echo ('<a href="' . $dazlink . '" target="_blank">Product Link</a></li>');
 
 				// let users regenerate the image
 				// echo ('<li><a href="#">Regenerate Preview</a></li>');
