@@ -69,6 +69,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 				// echo "We have Meta Data!";
 				// echo "The Marketpalce URL is $meta[steamURL] :-)<br>";
 
+				// add DAZ Affililate code to URL
+				$meta['steamURL'] = $meta['steamURL'] . '?cjref=1&utm_source=cj&utm_medium=affiliate&cjevent=bd1e3350dfe911eb80a6d9200a82b821';
+
 				// content goes here
 				
 				// embed source image
