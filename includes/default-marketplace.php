@@ -8,6 +8,8 @@ function guru_set_default_marketplace ( $post_id, $post ) {
         $defaults = array(
             'category' => array( 'not-tried' ),
             'marketplace' => array ( 'epic' ),
+			// 'post_tag' => array ( 'learning' ),
+			// default options are daz, epic, artstation, humble, gumroad, reallusion, rendo, synty
             );
         $taxonomies = get_object_taxonomies( $post->post_type );
         foreach ( (array) $taxonomies as $taxonomy ) {

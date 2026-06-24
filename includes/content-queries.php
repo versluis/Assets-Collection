@@ -85,7 +85,7 @@ function assets_daz() {
         'nopaging' => true )
     );
     $results = $query->found_posts;
-    echo "<p>There are <strong>$results DAZ3D Assets</strong> with interactive licenses in my collection:</p><ul>";
+    echo "<p>There are <strong>$results DAZ3D Assets</strong> in my collection:</p><ul>";
 
     // print query with separators
     echo guru_toc_output( $query );

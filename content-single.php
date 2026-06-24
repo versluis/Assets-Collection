@@ -70,7 +70,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 				// echo "The Marketpalce URL is $meta[steamURL] :-)<br>";
 
 				// add DAZ Affililate code to URL
-				$dazlink = $meta['steamURL'] . '?cjref=1&utm_source=cj&utm_medium=affiliate&cjevent=bd1e3350dfe911eb80a6d9200a82b821';
+				// check if it's actually a DAZ product
+				$dazlink = $meta['steamURL'];
+				$pos = strpos( $dazlink, 'daz3d.com');
+
+				if ($pos !== false) {
+					// it's a DAZ link
+					$dazlink = $meta['steamURL'] . '?cjref=1&utm_source=cj&utm_medium=affiliate&cjevent=bd1e3350dfe911eb80a6d9200a82b821';
+				} else {
+					// do nothing
+				}
+				/*
+				if (str_contains( $meta['steamURL'], 'daz3d.com')) {
+					$dazlink = $meta['steamURL'] . '?cjref=1&utm_source=cj&utm_medium=affiliate&cjevent=bd1e3350dfe911eb80a6d9200a82b821';
+				} else {
+					$dazlink = $meta['steamURL'];
+				}
+				*/
 
 				// content goes here
 				

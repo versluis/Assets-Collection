@@ -19,11 +19,12 @@ function guru_pull_image ($sourceURL, $imageID) {
 
     } else {
         // otherwise let's generate it first
-        $command = 'wkhtmltoimage --enable-javascript --javascript-delay 3000 --images --height 768 ' . $sourceURL . ' ' . $image;
-        exec($command);
+        // disabled: seems to have stopped working as of Januar 2022
+        // $command = 'wkhtmltoimage --enable-javascript --javascript-delay 3000 --images --height 768 ' . $sourceURL . ' ' . $image;
+        // exec($command);
     
-        return $imageURL;
-
+        // return $imageURL;
+  
     }
     
 
