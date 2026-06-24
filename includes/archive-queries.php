@@ -17,4 +17,4 @@ function guru_order_category_archives( $query ) {
         }
     }
 }
-add_action( 'pre_get_posts', 'guru_order_category_archive' );
+add_action( 'pre_get_posts', 'guru_order_category_archives' );

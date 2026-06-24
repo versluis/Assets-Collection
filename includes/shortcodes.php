@@ -12,7 +12,7 @@ function guru_my_shortcode() {
 
     // do something here
 
-    // return text you want to display
+    $output = '';
     return $output;
 }
 

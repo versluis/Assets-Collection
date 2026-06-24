@@ -64,7 +64,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			// if we have a Steam URL, let's display that widget
 			$meta = get_post_meta(get_the_id(), 'guru_fields', true);
-			if ($meta['steamURL']) {
+			if (is_array($meta) && !empty($meta['steamURL'])) {
 				
 				// echo "We have Meta Data!";
 				// echo "The Marketpalce URL is $meta[steamURL] :-)<br>";

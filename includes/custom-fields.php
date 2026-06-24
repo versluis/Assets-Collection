@@ -32,8 +32,8 @@ function guru_display_meta_box()
 
   <p>
     <label for="guru_fields[steamURL]">Marketplace URL: </label>
-    <input type="text" name="guru_fields[steamURL]" id="guru_fields[steamURL]" 
-    class="regular-text" value="<?php echo $meta['steamURL']; ?>">
+    <input type="url" name="guru_fields[steamURL]" id="guru_fields[steamURL]"
+    class="regular-text" value="<?php echo esc_attr( is_array($meta) ? ( $meta['steamURL'] ?? '' ) : '' ); ?>">
   </p>
 
 <?php }
@@ -42,7 +42,7 @@ function guru_display_meta_box()
 function guru_save_fields_meta($post_id)
 {
   // verify nonce
-  if (!wp_verify_nonce($_POST['guru_meta_box_nonce'], basename(__FILE__))) {
+  if (!isset($_POST['guru_meta_box_nonce']) || !wp_verify_nonce($_POST['guru_meta_box_nonce'], basename(__FILE__))) {
     return $post_id;
   }
   // check autosave
@@ -50,7 +50,7 @@ function guru_save_fields_meta($post_id)
     return $post_id;
   }
   // check permissions
-  if ('page' === $_POST['post_type']) {
+  if ('page' === ($_POST['post_type'] ?? '')) {
     if (!current_user_can('edit_page', $post_id)) {
       return $post_id;
     } elseif (!current_user_can('edit_post', $post_id)) {
@@ -59,10 +59,14 @@ function guru_save_fields_meta($post_id)
   }
 
   $old = get_post_meta($post_id, 'guru_fields', true);
-  $new = $_POST['guru_fields'];
-  // $new = sanitize_text_field ($new);
-  // $new = normalize_whitespace ($new);
-  // $new = trim($new);
+  $new = isset($_POST['guru_fields']) ? $_POST['guru_fields'] : null;
+  if (is_array($new) && isset($new['steamURL'])) {
+    $url = trim($new['steamURL']);
+    if ($url !== '' && !filter_var($url, FILTER_VALIDATE_URL)) {
+      return $post_id; // not a valid URL format, don't save
+    }
+    $new['steamURL'] = esc_url_raw($url);
+  }
 
   if ($new && $new !== $old) {
     update_post_meta($post_id, 'guru_fields', $new);

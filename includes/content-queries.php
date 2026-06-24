@@ -31,21 +31,21 @@ function guru_toc_output ( $query ) {
 
     // list articles
     if ($query->have_posts()) {
-        $output = $output . '<ul>';
+        $output = '<ul>';
 
         $count = 0;
         while ($query->have_posts()) {
 
             $count++;
             $query->the_post();
-            $output = $output .  '<li style="list-style: disclosure-closed"><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
+            $output .= '<li style="list-style: disclosure-closed"><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
 
             if ($count >= 10) {
-                $output = $output . "<hr class='slimline'>";
+                $output .= "<hr class='slimline'>";
                 $count = 0;
             }
         }
-        $output = $output .  "</ul>";
+        $output .= "</ul>";
 
         return $output;
     } // end list articles
