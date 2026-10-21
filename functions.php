@@ -25,6 +25,19 @@ function your_theme_enqueue_styles() {
 
 add_action('wp_enqueue_scripts', 'your_theme_enqueue_styles');
 
+// contact-sheet lightbox, only on Asset posts that have contact sheets
+function guru_enqueue_asset_lightbox() {
+  if (is_singular('assets') && get_post_meta(get_queried_object_id(), 'contact_sheet_ids', true)) {
+    wp_enqueue_script('asset-lightbox',
+      get_stylesheet_directory_uri() . '/js/asset-lightbox.js',
+      array(),
+      wp_get_theme()->get('Version'),
+      array('in_footer' => true)
+    );
+  }
+}
+add_action('wp_enqueue_scripts', 'guru_enqueue_asset_lightbox');
+
 /*  Add your own functions below this line.
   ======================================== */ 
 

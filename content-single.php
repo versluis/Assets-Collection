@@ -62,9 +62,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php
 			the_content();
 
-			// if we have a Steam URL, let's display that widget
+			// if we have a Marketplace URL, let's display that widget
+			// (skipped when it's the same link as the catalog block's Fab button)
 			$meta = get_post_meta(get_the_id(), 'guru_fields', true);
-			if (is_array($meta) && !empty($meta['steamURL'])) {
+			$fab_url = get_post_meta(get_the_id(), 'fab_url', true);
+			if (is_array($meta) && !empty($meta['steamURL']) && $meta['steamURL'] !== $fab_url) {
 				
 				// echo "We have Meta Data!";
 				// echo "The Marketpalce URL is $meta[steamURL] :-)<br>";
@@ -74,10 +76,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				// content goes here
 				
-				// embed source image
+				// embed source image (only cached previews exist - generation stopped in 2022)
 				$imageURL = guru_pull_image($meta['steamURL'], get_the_ID());
-				echo ('<a href="' . $dazlink . '" target="_blank">
-				<img src="' . $imageURL . '"></a>');
+				if ($imageURL) {
+					echo ('<a href="' . $dazlink . '" target="_blank">
+					<img src="' . esc_url($imageURL) . '"></a>');
+				}
 
 				// print a link to the Marketplace Listing:
 				echo ('<ul><li>');
@@ -89,8 +93,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				// echo ('<li>Post ID: ' . get_the_ID() . '</li>');
 				// echo ('<li>Image URL: ' . $imageURL . '</li>');
 				echo ('</ul>');
-			} 
-			
+			}
+
+			// catalog data: Fab button, stats, contact sheets, folder structure
+			if ('assets' === get_post_type()) {
+				get_template_part('template-parts/asset-catalog');
+			}
+
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'generatepress' ),
 				'after'  => '</div>',

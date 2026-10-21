@@ -5,12 +5,19 @@
  Author:       Jay Versluis
  Author URI:   https://versluis.com
  Template:     generatepress
- Version:      1.4
+ Version:      1.5
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 
  CHANGELOG
  ==========
+
+ v1.5 - October 2026
+ * added catalog block below the content of single Asset posts: Fab button,
+   stats line, contact-sheet gallery with lightbox, collapsible folder structure,
+   manifest link (renders nothing for posts without catalog data)
+ * fixed broken preview image on single posts when no cached image exists
+ * hide the legacy Product Link when it matches the Fab URL
 
  v1.4 - October 2026
  * moved the data layer (Asset post type, Marketplace taxonomy, default marketplace,
@@ -126,4 +133,94 @@
 .slimline {
     margin-top: 20px;
     margin-bottom: 20px;
+}
+/* == Catalog block on single Asset posts (template-parts/asset-catalog.php) == */
+
+.asset-catalog {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.asset-catalog__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.asset-catalog__fab {
+    color: #fff;
+}
+
+.asset-catalog__stats {
+    margin: 0;
+    color: #595959;
+}
+
+.asset-catalog__sheets {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+    margin-bottom: 1.5em;
+}
+
+.asset-catalog__sheet img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: opacity 0.2s ease;
+}
+
+.asset-catalog__sheet:hover img,
+.asset-catalog__sheet:focus img {
+    opacity: 0.85;
+}
+
+.asset-catalog__folders {
+    margin-bottom: 1.5em;
+}
+
+.asset-catalog__folders summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.asset-catalog__folders pre {
+    margin-top: 0.75em;
+    max-height: 30em;
+    overflow: auto;
+}
+
+.asset-lightbox {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    max-width: 95vw;
+    max-height: 95vh;
+}
+
+.asset-lightbox::backdrop {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.asset-lightbox img {
+    display: block;
+    max-width: 95vw;
+    max-height: 95vh;
+    width: auto;
+    height: auto;
+}
+
+.asset-lightbox__close {
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    padding: 0 0.3em;
+    font-size: 2.5em;
+    line-height: 1;
+    color: #fff;
+    background: transparent;
 }
