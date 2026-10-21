@@ -28,7 +28,7 @@ add_action('wp_enqueue_scripts', 'your_theme_enqueue_styles');
 /*  Add your own functions below this line.
   ======================================== */ 
 
-// includes (presentation only - post type, taxonomy and meta live in the Assets Data mu-plugin, see mu-plugin/)
+// includes (presentation only - post type, taxonomy and meta live in the Assets Data mu-plugin, see mu-plugins/)
 // include plugin_dir_path(__FILE__).'includes/debug.php';
 include plugin_dir_path(__FILE__).'includes/meta.php';
 include plugin_dir_path(__FILE__).'includes/footer-tweak.php';

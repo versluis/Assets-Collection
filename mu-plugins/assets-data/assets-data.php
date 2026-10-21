@@ -7,8 +7,8 @@
  * Version:     1.0
  * License:     GNU General Public License v2 or later
  *
- * This file lives in the Assets-Collection repo and is pulled in by a small
- * loader in wp-content/mu-plugins/ (see mu-plugin/loader/assets-data-loader.php).
+ * This file lives in the Assets-Collection repo (mu-plugins/assets-data/) and is pulled in
+ * by mu-plugins/assets-data-loader.php, which sits directly in wp-content/mu-plugins/.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

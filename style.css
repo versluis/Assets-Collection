@@ -14,7 +14,7 @@
 
  v1.4 - October 2026
  * moved the data layer (Asset post type, Marketplace taxonomy, default marketplace,
-   Marketplace URL meta box) into the new Assets Data mu-plugin (mu-plugin/),
+   Marketplace URL meta box) into the new Assets Data mu-plugin (mu-plugins/),
    so the theme is purely presentational
  * added REST-writable catalog meta fields: fab_url, item_count, manifest_url,
    engine_version, pack_size_bytes, catalog_status, contact_sheet_ids, folder_summary
