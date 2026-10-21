@@ -64,10 +64,11 @@ function assets_data_save_legacy_meta($post_id)
     $new['steamURL'] = esc_url_raw($url);
   }
 
-  if ($new && $new !== $old) {
+  // an emptied URL removes the meta instead of storing array('steamURL' => '')
+  if (is_array($new) && '' === ($new['steamURL'] ?? '')) {
+    delete_post_meta($post_id, 'guru_fields');
+  } elseif ($new && $new !== $old) {
     update_post_meta($post_id, 'guru_fields', $new);
-  } elseif ('' === $new && $old) {
-    delete_post_meta($post_id, 'guru_fields', $old);
   }
 }
 add_action('save_post', 'assets_data_save_legacy_meta');
