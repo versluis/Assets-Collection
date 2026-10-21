@@ -19,6 +19,8 @@
  * added REST-writable catalog meta fields: fab_url, item_count, manifest_url,
    engine_version, pack_size_bytes, catalog_status, contact_sheet_ids, folder_summary
  * added a Catalog Data meta box for editing these by hand
+ * added MCP abilities assets-data/get-catalog-meta and assets-data/update-catalog-meta,
+   offered to AtlasMCP so Editor accounts can read and write catalog fields
  * exposed the legacy guru_fields[steamURL] field to the REST API
  * fixed missing capability check when saving the Marketplace URL
  * fixed fatal error on the Random page (undefined guru_show_steam_widget)
