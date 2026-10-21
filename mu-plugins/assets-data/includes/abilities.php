@@ -120,7 +120,7 @@ function assets_data_register_abilities()
 
   wp_register_ability('assets-data/get-catalog-meta', array(
     'label' => 'Get Asset Catalog Data',
-    'description' => 'Read the catalog fields (fab_url, item_count, manifest_url, engine_version, pack_size_bytes, catalog_status, contact_sheet_ids, folder_summary) and the legacy marketplace URL of one Asset post.',
+    'description' => 'Read the catalog fields (product_url, item_count, manifest_url, engine_version, pack_size_bytes, catalog_status, contact_sheet_ids, folder_summary) and the legacy marketplace URL of one Asset post.',
     'category' => 'assets-data',
     'input_schema' => array(
       'type' => 'object',

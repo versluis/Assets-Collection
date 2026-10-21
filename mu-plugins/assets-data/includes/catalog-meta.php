@@ -12,7 +12,7 @@
 function assets_data_catalog_fields()
 {
   return array(
-    'fab_url'           => array('type' => 'url',     'label' => 'Fab URL',           'description' => 'Link to the pack\'s Fab listing.'),
+    'product_url'       => array('type' => 'url',     'label' => 'Product URL',       'description' => 'Link to the product page on its marketplace (Fab, DAZ 3D, Synty, ...).'),
     'item_count'        => array('type' => 'integer', 'label' => 'Item count',        'description' => 'Number of items in the pack.'),
     'manifest_url'      => array('type' => 'url',     'label' => 'Manifest URL',      'description' => 'Link to the pack\'s manifest JSON.'),
     'engine_version'    => array('type' => 'string',  'label' => 'Engine version',    'description' => 'The pack\'s original Unreal Engine version.'),

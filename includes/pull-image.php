@@ -29,11 +29,3 @@ function guru_pull_image ($sourceURL, $imageID) {
     
 
 }
-
-// marketplace link for display: DAZ links get our affiliate code appended
-function guru_marketplace_link ($url) {
-    if (strpos($url, 'daz3d.com') !== false) {
-        return $url . '?cjref=1&utm_source=cj&utm_medium=affiliate&cjevent=bd1e3350dfe911eb80a6d9200a82b821';
-    }
-    return $url;
-}

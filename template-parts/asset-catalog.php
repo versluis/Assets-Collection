@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 }
 
 $post_id        = get_the_ID();
-$fab_url        = (string) get_post_meta($post_id, 'fab_url', true);
+$product_url    = (string) get_post_meta($post_id, 'product_url', true);
 $item_count     = (int) get_post_meta($post_id, 'item_count', true);
 $engine_version = (string) get_post_meta($post_id, 'engine_version', true);
 $pack_size      = (int) get_post_meta($post_id, 'pack_size_bytes', true);
@@ -34,17 +34,17 @@ if ($pack_size) {
 	$stats[] = size_format($pack_size, 1);
 }
 
-if ('' === $fab_url && !$stats && !$sheet_ids && '' === $manifest_url && '' === $folder_summary) {
+if ('' === $product_url && !$stats && !$sheet_ids && '' === $manifest_url && '' === $folder_summary) {
 	return; // pre-catalog post: render nothing
 }
 ?>
 
 <section class="asset-catalog" aria-label="Catalog details">
 
-	<?php if ('' !== $fab_url || $stats) : ?>
+	<?php if ('' !== $product_url || $stats) : ?>
 		<div class="asset-catalog__header">
-			<?php if ('' !== $fab_url) : ?>
-				<a class="button gradient asset-catalog__fab" href="<?php echo esc_url($fab_url); ?>" target="_blank" rel="noopener">View on Fab</a>
+			<?php if ('' !== $product_url) : ?>
+				<a class="button gradient asset-catalog__product" href="<?php echo esc_url(guru_marketplace_link($product_url)); ?>" target="_blank" rel="noopener"><?php echo esc_html(guru_product_link_label($product_url)); ?></a>
 			<?php endif; ?>
 			<?php if ($stats) : ?>
 				<p class="asset-catalog__stats"><?php echo esc_html(implode(' · ', $stats)); ?></p>

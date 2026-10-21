@@ -46,6 +46,7 @@ add_action('wp_enqueue_scripts', 'guru_enqueue_asset_lightbox');
 include plugin_dir_path(__FILE__).'includes/meta.php';
 include plugin_dir_path(__FILE__).'includes/footer-tweak.php';
 include plugin_dir_path(__FILE__).'includes/pull-image.php';
+include plugin_dir_path(__FILE__).'includes/product-link.php';
 include plugin_dir_path(__FILE__).'includes/content-queries.php';
 include plugin_dir_path(__FILE__).'includes/archive-queries.php';
 

@@ -25,3 +25,4 @@ require_once __DIR__ . '/includes/legacy-fields.php';
 require_once __DIR__ . '/includes/catalog-meta.php';
 require_once __DIR__ . '/includes/catalog-meta-box.php';
 require_once __DIR__ . '/includes/abilities.php';
+require_once __DIR__ . '/includes/backfill.php';

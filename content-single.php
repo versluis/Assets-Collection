@@ -63,10 +63,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 			the_content();
 
 			// if we have a Marketplace URL, let's display that widget
-			// (skipped when it's the same link as the catalog block's Fab button)
+			// (skipped when it's the same link as the catalog block's product button)
 			$meta = get_post_meta(get_the_id(), 'guru_fields', true);
-			$fab_url = get_post_meta(get_the_id(), 'fab_url', true);
-			if (is_array($meta) && !empty($meta['steamURL']) && $meta['steamURL'] !== $fab_url) {
+			$product_url = get_post_meta(get_the_id(), 'product_url', true);
+			if (is_array($meta) && !empty($meta['steamURL']) && $meta['steamURL'] !== $product_url) {
 				
 				// echo "We have Meta Data!";
 				// echo "The Marketpalce URL is $meta[steamURL] :-)<br>";
@@ -95,7 +95,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				echo ('</ul>');
 			}
 
-			// catalog data: Fab button, stats, contact sheets, folder structure
+			// catalog data: product button, stats, contact sheets, folder structure
 			if ('assets' === get_post_type()) {
 				get_template_part('template-parts/asset-catalog');
 			}

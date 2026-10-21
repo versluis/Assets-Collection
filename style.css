@@ -5,12 +5,21 @@
  Author:       Jay Versluis
  Author URI:   https://versluis.com
  Template:     generatepress
- Version:      1.5
+ Version:      1.6
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 
  CHANGELOG
  ==========
+
+ v1.6 - October 2026
+ * renamed the fab_url field to product_url, since assets come from many marketplaces
+ * product button label follows the link (View on Fab, View on DAZ 3D, ...) and
+   DAZ links get the affiliate code
+ * added Tools > Assets Backfill (and wp assets-data backfill) to fill product_url
+   from the old fab_url field, the legacy Marketplace URL or a single store link
+   in the post body - dry run first, never edits post bodies
+ * moved guru_marketplace_link() to includes/product-link.php
 
  v1.5 - October 2026
  * added catalog block below the content of single Asset posts: Fab button,
@@ -150,7 +159,7 @@
     margin-bottom: 1.5em;
 }
 
-.asset-catalog__fab {
+.asset-catalog__product {
     color: #fff;
 }
 
