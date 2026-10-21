@@ -3,8 +3,8 @@
 // set default Category and Marketpalce on Asset Posts
 // https://silentcomics.com/wordpress/automatic-default-taxonomy-for-a-custom-post-type/
 
-function guru_set_default_marketplace ( $post_id, $post ) {
-    if ( 'publish' === $post->post_status && $post->post_type === 'assets' ) {
+function assets_data_set_default_marketplace ( $post_id, $post ) {
+    if ( 'publish' === $post->post_status && $post->post_type === ASSETS_DATA_POST_TYPE ) {
         $defaults = array(
             'category' => array( 'not-tried' ),
             'marketplace' => array ( 'epic' ),
@@ -20,5 +20,5 @@ function guru_set_default_marketplace ( $post_id, $post ) {
         }
     }
   }
-  add_action( 'save_post', 'guru_set_default_marketplace', 0, 2 );
+  add_action( 'save_post', 'assets_data_set_default_marketplace', 0, 2 );
   

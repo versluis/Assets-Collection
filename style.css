@@ -5,12 +5,24 @@
  Author:       Jay Versluis
  Author URI:   https://versluis.com
  Template:     generatepress
- Version:      1.3
+ Version:      1.4
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 
  CHANGELOG
  ==========
+
+ v1.4 - October 2026
+ * moved the data layer (Asset post type, Marketplace taxonomy, default marketplace,
+   Marketplace URL meta box) into the new Assets Data mu-plugin (mu-plugin/),
+   so the theme is purely presentational
+ * added REST-writable catalog meta fields: fab_url, item_count, manifest_url,
+   engine_version, pack_size_bytes, catalog_status, contact_sheet_ids, folder_summary
+ * added a Catalog Data meta box for editing these by hand
+ * exposed the legacy guru_fields[steamURL] field to the REST API
+ * fixed missing capability check when saving the Marketplace URL
+ * fixed fatal error on the Random page (undefined guru_show_steam_widget)
+ * fixed PHP 8 warnings on the Random page for assets without a URL
 
  v1.3 - June 2026
  * modernised code for PHP 8 compatibility

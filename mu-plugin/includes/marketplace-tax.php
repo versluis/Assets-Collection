@@ -1,7 +1,7 @@
 <?php
 
 // create custom "Marketplace" taxonomy
-function guru_create_marketplace_tax()
+function assets_data_register_marketplace_tax()
 {
   // Add new taxonomy, make it hierarchical (like categories)
   $labels = array(
@@ -29,7 +29,7 @@ function guru_create_marketplace_tax()
     'show_in_rest' => true,
   );
 
-  register_taxonomy('marketplace', array('assets'), $args);
+  register_taxonomy('marketplace', array(ASSETS_DATA_POST_TYPE), $args);
 }
 // initialise on theme setup
-add_action('init', 'guru_create_marketplace_tax');
+add_action('init', 'assets_data_register_marketplace_tax');

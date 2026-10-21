@@ -28,14 +28,10 @@ add_action('wp_enqueue_scripts', 'your_theme_enqueue_styles');
 /*  Add your own functions below this line.
   ======================================== */ 
 
-// includes
-include plugin_dir_path(__FILE__).'includes/assets-post.php';
-include plugin_dir_path(__FILE__).'includes/marketplace-tax.php';
-include plugin_dir_path(__FILE__).'includes/default-marketplace.php';
+// includes (presentation only - post type, taxonomy and meta live in the Assets Data mu-plugin, see mu-plugin/)
 // include plugin_dir_path(__FILE__).'includes/debug.php';
 include plugin_dir_path(__FILE__).'includes/meta.php';
 include plugin_dir_path(__FILE__).'includes/footer-tweak.php';
-include plugin_dir_path(__FILE__).'includes/custom-fields.php';
 include plugin_dir_path(__FILE__).'includes/pull-image.php';
 include plugin_dir_path(__FILE__).'includes/content-queries.php';
 include plugin_dir_path(__FILE__).'includes/archive-queries.php';

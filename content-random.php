@@ -77,13 +77,13 @@ if ( ! defined( 'ABSPATH' ) ) {
                 while ($query->have_posts() ) {
                     $query->the_post();
 
-                    // if we have a Steam URL, display that
+                    // if we have a Marketplace URL, show the title plus a product link
                     // otherwise show a button
                     $meta = get_post_meta(get_the_id(), 'guru_fields', true);
-                    if ($meta['steamURL']) {
+                    if (is_array($meta) && !empty($meta['steamURL'])) {
                         echo '<h1 class="entry-title"><a href="' . get_permalink() . 
-                        '">' . get_the_title() . '</a></h1><br>';
-                        guru_show_steam_widget( $meta['steamURL'] );
+                        '">' . get_the_title() . '</a></h1>';
+                        echo '<p><a href="' . esc_url( guru_marketplace_link( $meta['steamURL'] ) ) . '" target="_blank">Product Link</a></p>';
                     
                     } else {
                         echo '<p><a class="button gradient2" href="' . get_permalink() . 
@@ -111,13 +111,13 @@ if ( ! defined( 'ABSPATH' ) ) {
                 while ($query->have_posts() ) {
                     $query->the_post();
                     
-                    // if we have a Steam URL, display that
+                    // if we have a Marketplace URL, show the title plus a product link
                     // otherwise show a button
                     $meta = get_post_meta(get_the_id(), 'guru_fields', true);
-                    if ($meta['steamURL']) {
+                    if (is_array($meta) && !empty($meta['steamURL'])) {
                         echo '<h1 class="entry-title"><a href="' . get_permalink() . 
-                        '">' . get_the_title() . '</a></h1><br>';
-                        guru_show_steam_widget( $meta['steamURL'] );
+                        '">' . get_the_title() . '</a></h1>';
+                        echo '<p><a href="' . esc_url( guru_marketplace_link( $meta['steamURL'] ) ) . '" target="_blank">Product Link</a></p>';
                     
                     } else {
                         echo '<p><a class="button gradient" href="' . get_permalink() . 
@@ -145,13 +145,13 @@ if ( ! defined( 'ABSPATH' ) ) {
                 while ($query->have_posts() ) {
                     $query->the_post();
 
-                    // if we have a Steam URL, display that
+                    // if we have a Marketplace URL, show the title plus a product link
                     // otherwise show a button
                     $meta = get_post_meta(get_the_id(), 'guru_fields', true);
-                    if ($meta['steamURL']) {
+                    if (is_array($meta) && !empty($meta['steamURL'])) {
                         echo '<h1 class="entry-title"><a href="' . get_permalink() . 
-                        '">' . get_the_title() . '</a></h1><br>';
-                        guru_show_steam_widget( $meta['steamURL'] );
+                        '">' . get_the_title() . '</a></h1>';
+                        echo '<p><a href="' . esc_url( guru_marketplace_link( $meta['steamURL'] ) ) . '" target="_blank">Product Link</a></p>';
                     
                     } else {
                         echo '<p><a class="button gradient3" href="' . get_permalink() . 
